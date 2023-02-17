@@ -4,6 +4,7 @@ import org.junit.After;
 import org.junit.Before;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 
 import java.util.concurrent.TimeUnit;
 
@@ -12,7 +13,10 @@ public abstract class BaseUITest {
 
     @Before
     public void setup() {
-        webDriver = new ChromeDriver();
+        ChromeOptions options = new ChromeOptions();
+        options.setBinary("/Applications/Yandex.app/Contents/MacOS/Yandex");
+        webDriver = new ChromeDriver(options);
+
         webDriver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
         webDriver.get("https://stellarburgers.nomoreparties.site/");
     }

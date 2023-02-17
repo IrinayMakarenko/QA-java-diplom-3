@@ -5,17 +5,10 @@ import io.qameta.allure.junit4.DisplayName;
 import org.junit.Assert;
 import org.junit.Test;
 import org.openqa.selenium.By;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import praktikum.page.MainPage;
 
-import java.nio.file.CopyOption;
-import java.nio.file.Files;
-import java.nio.file.Path;
-
-import static java.nio.file.StandardCopyOption.REPLACE_EXISTING;
 
 public class MainPageTest extends BaseUITest{
 
@@ -46,9 +39,9 @@ public class MainPageTest extends BaseUITest{
         MainPage mainPage = new MainPage(webDriver);
         mainPage.clickInactiveSauceButton();
         new WebDriverWait(webDriver, 5)
-                .until(ExpectedConditions.visibilityOfElementLocated(By.xpath(".//div[@class='tab_tab__1SPyG tab_tab_type_current__2BEPc pt-4 pr-10 pb-4 pl-10 noselect']/./span[text()='Соусы']")));
+                .until(ExpectedConditions.visibilityOfElementLocated(By.xpath(".//div[@class='tab_tab__1SPyG  pt-4 pr-10 pb-4 pl-10 noselect']/./span[text()='Булки']")));
         new WebDriverWait(webDriver, 5)
-                .until(ExpectedConditions.not(ExpectedConditions.visibilityOfElementLocated(By.xpath(".//div[@class='tab_tab__1SPyG tab_tab_type_current__2BEPc pt-4 pr-10 pb-4 pl-10 noselect']/./span[text()='Булки']"))));
+                .until(ExpectedConditions.visibilityOfElementLocated(By.xpath(".//div[@class='tab_tab__1SPyG tab_tab_type_current__2BEPc pt-4 pr-10 pb-4 pl-10 noselect']/./span[text()='Соусы']")));
         mainPage.clickInactiveBunButton();
         boolean successActiveBunButtonIsDisplayed = mainPage.checkActiveBunButtonIsDisplayed();
         Assert.assertTrue("Неуспешный переход к разделу 'Булки'", successActiveBunButtonIsDisplayed);

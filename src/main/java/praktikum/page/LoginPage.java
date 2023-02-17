@@ -25,9 +25,11 @@ public class LoginPage extends BasePage {
     public void clickRegisterLink() {
         webDriver.findElement(registerLink).click();
     }
+
     public void clickForgotPasswordLink() {
         webDriver.findElement(forgotPasswordLink).click();
     }
+
     public boolean checkSuccessLoginHeaderIsDisplayed() {
         return webDriver.findElement(successLoginHeader).isDisplayed();
     }
@@ -36,10 +38,12 @@ public class LoginPage extends BasePage {
 
         webDriver.findElement(emailField).sendKeys(userEmail);
     }
+
     public void setLoginUserPassword(String userPassword) {
 
         webDriver.findElement(passwordField).sendKeys(userPassword);
     }
+
     public void clickLoginButton() {
         webDriver.findElement(loginButton).click();
     }

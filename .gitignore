@@ -4,3 +4,5 @@
 .DS_Store
 # игнорировать файл target
 target
+# игнорировать файл chromedriver
+chromedriver

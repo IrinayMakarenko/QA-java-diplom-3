@@ -21,6 +21,7 @@ public class AccountPage extends BasePage {
                 .until(ExpectedConditions.visibilityOfElementLocated(profileButton));
         return webDriver.findElement(profileButton).isDisplayed();
     }
+
     public void clickLogoutButton() {
         new WebDriverWait(webDriver, 5)
                 .until(ExpectedConditions.visibilityOfElementLocated(logoutButton));
